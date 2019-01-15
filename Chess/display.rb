@@ -26,29 +26,9 @@ class Display
       display_board << display_row
       puts display_row
     end
+    @cursor.get_input
+    puts "----------------"
+    self.render
     return nil
   end
-
-  #new method
-   "|                    |"
-    # puts"--------------------------------"
-    # puts display_row
-    # if i == cursor_row && j == cursor_col
-    #   display_row += temp_piece.colorize(:red)
-    # else
-    #   display_row += temp_piece
-    # end
-    # temp_real_piece = "♙ | "
-    # if i == cursor_row && j == cursor_col
-    #   display_row += temp_real_piece.colorize(:red)
-    # else
-    #   display_row += temp_real_piece
-    # end
-
-  #get input
-  #until input == 
-
-
-
-
 end
