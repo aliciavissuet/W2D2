@@ -5,3 +5,8 @@ load 'Chess/piece.rb'
 
 
 b = Board.new
+d = Display.new(b)
+d.render
+r = Rook.new([0,0], :r, b)
+bis = Bishop.new([2,0], :bis, b)
+q = Queen.new([2,1], :q, b)

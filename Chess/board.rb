@@ -13,7 +13,7 @@ class Board
     @chess_board.each_index do |idx1|
       @chess_board.each_index do |idx2|
         if idx1 == 0 || idx1 == 1 || idx1 == 6 || idx1 == 7
-          @chess_board[idx1][idx2] = Piece.new([idx1, idx2])
+          @chess_board[idx1][idx2] = Piece.new([idx1, idx2], self)
         else
           @chess_board[idx1][idx2] = sentinel
         end
