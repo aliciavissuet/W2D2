@@ -51,7 +51,7 @@ class Queen < Piece
 end
 
 class Knight < Piece
-  include SlidingPiece
+  include SteppingPiece
 
   def initialize(pos, symbol, board)
     super(pos, board) 
@@ -63,7 +63,18 @@ class Knight < Piece
   end
 end
 
+class King < Piece
+  include SteppingPiece
 
+  def initialize(pos, symbol, board)
+    super(pos, board) 
+    @symbol = symbol
+  end 
+
+  def move_dirs
+    return [[1,0], [-1,0], [0,1], [0,-1], [1,1], [1,-1], [-1,1], [-1,-1]]
+  end
+end
 
 
 
