@@ -18,9 +18,25 @@ class Display
         temp_realp = "♙ "
         temp_nullp = "_ "
         if piece.is_a?(NullPiece)
-          i == c_row && j == c_col ? display_row += temp_nullp.colorize(:red) : display_row += temp_nullp
+          if i == c_row && j == c_col
+            if @cursor.selected
+              display_row += temp_nullp.colorize(:green)
+            else
+              display_row += temp_nullp.colorize(:red)
+            end
+          else
+            display_row += temp_nullp
+          end
         else
-          i == c_row && j == c_col ? display_row += temp_realp.colorize(:red) : display_row += temp_realp
+          if i == c_row && j == c_col
+            if @cursor.selected
+              display_row += temp_realp.colorize(:green)
+            else
+              display_row += temp_realp.colorize(:red)
+            end
+          else
+            display_row += temp_realp
+          end
         end
       end
       display_board << display_row
