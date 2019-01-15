@@ -2,6 +2,14 @@ require_relative "cursor"
 require 'colorize'
 
 class Display
+  PIECE_HASH = {
+      rook: "♖",
+      knight: "♘",
+      bishop: "♗",
+      queen: "♕",
+      king: "♔",
+      pawn: "♙"
+    }
 
   def initialize(board)
     @cursor = Cursor.new([0,0], board)
@@ -15,7 +23,7 @@ class Display
     @board.chess_board.each_with_index do |row, i|
       display_row = ""
       row.each_with_index do |piece, j|
-        temp_realp = "♙ "
+        temp_realp = "#{PIECE_HASH[piece.symbol]} "
         temp_nullp = "_ "
         if piece.is_a?(NullPiece)
           if i == c_row && j == c_col
