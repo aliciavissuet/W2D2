@@ -23,7 +23,7 @@ class Display
     @board.chess_board.each_with_index do |row, i|
       display_row = ""
       row.each_with_index do |piece, j|
-        temp_realp = "#{PIECE_HASH[piece.symbol]} "
+        temp_realp = "#{PIECE_HASH[piece.symbol]} ".colorize(piece.color)
         temp_nullp = "_ "
         if piece.is_a?(NullPiece)
           if i == c_row && j == c_col
